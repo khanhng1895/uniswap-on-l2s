@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from millify import millify
 
-st.cache_data.clear()
+# st.cache_data.clear()
 
 st.set_page_config(
     page_title="Uniswap On L2s",
