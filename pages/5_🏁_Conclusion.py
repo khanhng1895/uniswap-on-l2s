@@ -42,3 +42,11 @@ div[data-testid="metric-container"] > label[data-testid="stMetricLabel"] > div {
 
 st.markdown(f'<h1 style="color:#434346;font-size:60px;text-align:center;">{"Conclusion"}</h1>', unsafe_allow_html=True)
 st.info("This section encapsulates the essential takeaways from our exploration, providing a holistic understanding of the state of Uniswap on L2s.", icon="ℹ️")
+
+
+insight_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">As we conclude our examination of Uniswap\'s presence on Layer 2s, certain patterns come into focus. Token swap dynamics reveal a consistent preference for WETH and USDC, with variations on Avalanche and BSC. Arbitrum and Polygon emerge as key players, with Arbitrum particularly standing out in terms of user activity and swap volume, particularly among larger retail traders.</p>'
+st.markdown(insight_1, unsafe_allow_html=True)
+
+
+insight_2 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">Optimism, while not commanding the highest volumes, showcases resilience and engagement, notably during airdrop events. Meanwhile, Avalanche and BSC grapple with retention challenges, prompting a closer look at how Uniswap can strengthen its foothold on these two L2s.</p>'
+st.markdown(insight_2, unsafe_allow_html=True)
