@@ -88,12 +88,15 @@ df24_fig1 = px.line(df24,
 df24_fig1.update_layout(hovermode="x unified")
 
 st.markdown(f'<h1 style="color:#434346;font-size:60px;text-align:center;">{"Gas Costs"}</h1>', unsafe_allow_html=True)
-st.info("This page examines gas cost dynamics within Uniswap, delving into variations in gas fees across different chains.", icon="ℹ️")
+st.info("This page examines gas cost fluctuations within Uniswap, delving into variations in gas fees across different L2s.", icon="ℹ️")
 
 st.plotly_chart(df24_fig1, theme="streamlit", use_container_width=True)
+st.link_button("View SQL", f"{url24}")
 
 col_1a, col_1b = st.columns(2)
 with col_1a:
     st.plotly_chart(df2_fig1, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url2}")
 with col_1b:
     st.plotly_chart(df3_fig1, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url3}")
