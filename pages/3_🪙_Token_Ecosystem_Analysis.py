@@ -4,8 +4,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from millify import millify
+from streamlit_extras.colored_header import colored_header
 
-# st.cache_data.clear()
+st.cache_data.clear()
 
 st.set_page_config(
     page_title="Uniswap On L2s",
@@ -222,3 +223,27 @@ with col_3a:
 with col_3b:
     st.plotly_chart(df14_fig1, theme="streamlit", use_container_width=True)
     st.link_button("View SQL", f"{url14}")
+
+
+colored_header(
+    label="",
+    description="",
+    color_name="gray-70",
+)
+
+insight_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">Polygon boasts the highest number of listed tokens among Layer 2s, totaling an impressive 7571, a statistic aligned with its leading position in terms of active pools per week. Arbitrum follows closely with 5084 listed tokens. It\'s noteworthy, however, that only a fraction of these listed tokens are actively swapped. Notably, there has been a recent surge in token listings on Optimism and Base in recent weeks.</p>'
+st.markdown(insight_1, unsafe_allow_html=True)
+
+
+insight_2 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">The dominance of pools denominated in WETH, stablecoins, and native tokens specific to each Layer 2 is evident when considering trading volume. These categories consistently emerge as the most influential in the overall pool landscape.</p>'
+st.markdown(insight_2, unsafe_allow_html=True)
+
+
+insight_3 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">When examining token swaps, WETH and USDC emerge as the top tokens by volume, except on Avalanche and BSC, where WAVAX and WBNB take precedence. Additionally, on BSC, USDT surpasses USDC in terms of swap volume, setting it apart as the only chain where this particular phenomenon occurs.</p>'
+st.markdown(insight_3, unsafe_allow_html=True)
+
+colored_header(
+    label="",
+    description="",
+    color_name="gray-70",
+)
