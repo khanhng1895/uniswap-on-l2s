@@ -151,24 +151,31 @@ colored_header(
 col_1a, col_1b, col_1c = st.columns(3)
 with col_1a:
     st.metric("Swap Volume", f"${millify(df8['VOLUME'].sum(), precision=2)}")
+    st.link_button("View SQL", f"{url8}")
 with col_1b:
     st.metric("Average Swap Size", f"${millify(df8['AVG_SWAP_SIZE_USD'].sum(), precision=2)}")
+    st.link_button("View SQL", f"{url8}")
 with col_1c:
     st.metric("Median Swap Size", f"${millify(df8['MEDIAN_SWAP_SIZE_USD'].sum(), precision=2)}")
+    st.link_button("View SQL", f"{url8}")
 
 
 col_2a, col_2b = st.columns(2)
 with col_2a:
     st.plotly_chart(df7_fig1, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url7}")
 with col_2b:
     st.plotly_chart(df7_fig2, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url7}")
 
 col_3a, col_3b = st.columns(2)
 with col_3a:
     st.plotly_chart(df22_fig1, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url22}")
 with col_3b:
     st.plotly_chart(df22_fig2, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url22}")
 
-insight_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 16px;">Back in November 2018, Uniswap introduced its V1 contract on the Ethereum mainnet, setting the stage for a new kind of decentralized exchange. Fast forward five years, and Uniswap has been on quite a journey, constantly evolving with each new version. But it\'s not just Ethereum—it has spread its wings to different blockchains, attracting more users and becoming a hub for trading, swaps, and Total Value Locked (TVL).</p>'
+# insight_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 16px;">Back in November 2018, Uniswap introduced its V1 contract on the Ethereum mainnet, setting the stage for a new kind of decentralized exchange. Fast forward five years, and Uniswap has been on quite a journey, constantly evolving with each new version. But it\'s not just Ethereum—it has spread its wings to different blockchains, attracting more users and becoming a hub for trading, swaps, and Total Value Locked (TVL).</p>'
 
-st.markdown(insight_1, unsafe_allow_html=True)
+# st.markdown(insight_1, unsafe_allow_html=True)
