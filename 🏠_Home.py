@@ -232,6 +232,20 @@ with col_5b:
     st.plotly_chart(df27_fig4, theme="streamlit", use_container_width=True)
     st.link_button("View SQL", f"{url27}")
 
-# insight_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 16px;">Back in November 2018, Uniswap introduced its V1 contract on the Ethereum mainnet, setting the stage for a new kind of decentralized exchange. Fast forward five years, and Uniswap has been on quite a journey, constantly evolving with each new version. But it\'s not just Ethereum—it has spread its wings to different blockchains, attracting more users and becoming a hub for trading, swaps, and Total Value Locked (TVL).</p>'
+colored_header(
+    label="",
+    description="",
+    color_name="gray-70",
+)
 
-# st.markdown(insight_1, unsafe_allow_html=True)
+insight_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">Arbitrum and Polygon emerge as prominent L2s on Uniswap, each commanding a substantial 31% share of unique users. However, a deeper analysis reveals Arbitrum\'s dominance, boasting a remarkable 55% share of the total swap volume across all six L2s. This stands 71.8% higher than Polygon\'s respectable 32% share. The significance lies in the fact that while both platforms attract an equal number of users, Arbitrum users are notably more active, collectively engaging in higher-value swaps compared to their Polygon counterparts.</p>'
+st.markdown(insight_1, unsafe_allow_html=True)
+
+insight_2 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">This trend is reinforced when examining the weekly active users and swap volume charts. Despite initial parity between the two L2s, with Polygon even enjoying a higher count of active pools per week, a pivotal shift occurred in March 2023. Notably, this surge in Uniswap activity on Arbitrum coincided with the platform\'s inaugural airdrop in the same month. During the peak of this surge, the third week of March 2023 witnessed an impressive $3.5 billion worth of tokens being swapped on Uniswap via Arbitrum. This data underscores Arbitrum\'s growing prominence and user engagement, suggesting that airdrops can significantly impact the usage and adoption of Uniswap.</p>'
+st.markdown(insight_2, unsafe_allow_html=True)
+
+colored_header(
+    label="",
+    description="",
+    color_name="gray-70",
+)
