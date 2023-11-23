@@ -43,6 +43,7 @@ div[data-testid="metric-container"] > label[data-testid="stMetricLabel"] > div {
 
 st.markdown(f'<h1 style="color:#434346;font-size:60px;text-align:center;">{"Token Ecosystem Analysis"}</h1>', unsafe_allow_html=True)
 st.info("This page explores the Uniswap token ecosystem on L2s, where we unveil the dynamics of listed tokens, top pools, and the most swapped tokens.", icon="ℹ️")
+st.warning('Listed tokens include tokens with [warnings](https://support.uniswap.org/hc/en-us/articles/8723118437133). These are tokens not frequently swapped on Uniswap and have not satisfied other quantitative criteria, such as being traded on a leading U.S. centralized exchange.', icon="⚠️")
 
 ############################# cache datasets ########################################
 
