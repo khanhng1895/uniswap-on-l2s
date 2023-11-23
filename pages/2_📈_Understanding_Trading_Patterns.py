@@ -4,8 +4,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from millify import millify
+from streamlit_extras.colored_header import colored_header
 
-# st.cache_data.clear()
+st.cache_data.clear()
 
 st.set_page_config(
     page_title="Uniswap On L2s",
@@ -65,11 +66,11 @@ def load_df10():
     df10 = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{url10.split('/')[-1]}/data/latest")
     return df10
 
-url20 = "https://flipsidecrypto.xyz/edit/queries/1b94ad93-12f5-4572-ab54-c2de02823eeb"
+url9 = "https://flipsidecrypto.xyz/edit/queries/8e4b199c-1f8e-42be-bbfb-3829be128ede"
 @st.cache_data
-def load_df20():
-    df20 = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{url20.split('/')[-1]}/data/latest")
-    return df20
+def load_df9():
+    df9 = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{url9.split('/')[-1]}/data/latest")
+    return df9
 
 url21 = "https://flipsidecrypto.xyz/edit/queries/c61e84bf-7ef2-49bf-b5fe-4211c3d19777"
 @st.cache_data
@@ -88,7 +89,7 @@ def load_df23():
 df4 = load_df4()
 df5 = load_df5()
 df10 = load_df10()
-df20 = load_df20()
+df9 = load_df9()
 df21 = load_df21()
 df23 = load_df23()
 
@@ -223,61 +224,61 @@ df10_fig6 = px.scatter(df10_6,
                             },
                  title="Volume Distribution on Uniswap for Polygon by Hour and Weekday [30D]")
 
-##########################___________________DF20_____________________######################
+##########################___________________DF9_____________________######################
 
-df20_1 = df20[df20['CHAIN'] == 'Arbitrum']
-df20_fig1 = px.bar(df20_1,
+df9_1 = df9[df9['CHAIN'] == 'Arbitrum']
+df9_fig1 = px.bar(df9_1,
                x='CATEGORY',
-               y='USER_COUNT',
+               y='TXN_COUNT',
                log_y=True,
-               title='Uniswap Users by Txn Count on Arbitrum [Log]',
-               labels={'USER_COUNT': 'User Count'})
-df20_fig1.update_layout(hovermode="x unified")
+               title='Swap $ Distribution by Txn Count on Arb [Log]',)
+#               labels={'USER_COUNT': 'User Count'})
+df9_fig1.update_layout(hovermode="x unified")
 
-df20_2 = df20[df20['CHAIN'] == 'Avalanche']
-df20_fig2 = px.bar(df20_2,
+df9_2 = df9[df9['CHAIN'] == 'Avalanche']
+df9_fig2 = px.bar(df9_2,
                x='CATEGORY',
-               y='USER_COUNT',
+               y='TXN_COUNT',
                log_y=True,
-               title='Uniswap Users by Txn Count on Avalanche [Log]',
-               labels={'USER_COUNT': 'User Count'})
-df20_fig2.update_layout(hovermode="x unified")
+               title='Swap $ Distribution by Txn Count on Ava [Log]',)
+#               labels={'USER_COUNT': 'User Count'})
+df9_fig2.update_layout(hovermode="x unified")
 
-df20_3 = df20[df20['CHAIN'] == 'Base']
-df20_fig3 = px.bar(df20_3,
+df9_3 = df9[df9['CHAIN'] == 'Base']
+df9_fig3 = px.bar(df9_3,
                x='CATEGORY',
-               y='USER_COUNT',
+               y='TXN_COUNT',
                log_y=True,
-               title='Uniswap Users by Txn Count on Base [Log]',
-               labels={'USER_COUNT': 'User Count'})
-df20_fig3.update_layout(hovermode="x unified")
+               title='Swap $ Distribution by Txn Count on Base [Log]',)
+#               labels={'USER_COUNT': 'User Count'})
+df9_fig3.update_layout(hovermode="x unified")
 
-df20_4 = df20[df20['CHAIN'] == 'BSC']
-df20_fig4 = px.bar(df20_4,
+df9_4 = df9[df9['CHAIN'] == 'BSC']
+df9_fig4 = px.bar(df9_4,
                x='CATEGORY',
-               y='USER_COUNT',
+               y='TXN_COUNT',
                log_y=True,
-               title='Uniswap Users by Txn Count on BSC [Log]',
-               labels={'USER_COUNT': 'User Count'})
-df20_fig4.update_layout(hovermode="x unified")
+               title='Swap $ Distribution by Txn Count on BSC [Log]',)
+#               labels={'USER_COUNT': 'User Count'})
+df9_fig4.update_layout(hovermode="x unified")
 
-df20_5 = df20[df20['CHAIN'] == 'Optimism']
-df20_fig5 = px.bar(df20_5,
+df9_5 = df9[df9['CHAIN'] == 'Optimism']
+df9_fig5 = px.bar(df9_5,
                x='CATEGORY',
-               y='USER_COUNT',
+               y='TXN_COUNT',
                log_y=True,
-               title='Uniswap Users by Txn Count on Optimism [Log]',
-               labels={'USER_COUNT': 'User Count'})
-df20_fig5.update_layout(hovermode="x unified")
+               title='Swap $ Distribution by Txn Count on Optim [Log]',)
+#               labels={'USER_COUNT': 'User Count'})
+df9_fig5.update_layout(hovermode="x unified")
 
-df20_6 = df20[df20['CHAIN'] == 'Polygon']
-df20_fig6 = px.bar(df20_6,
+df9_6 = df9[df9['CHAIN'] == 'Polygon']
+df9_fig6 = px.bar(df9_6,
                x='CATEGORY',
-               y='USER_COUNT',
+               y='TXN_COUNT',
                log_y=True,
-               title='Uniswap Users by Txn Count on Polygon [Log]',
-               labels={'USER_COUNT': 'User Count'})
-df20_fig6.update_layout(hovermode="x unified")
+               title='Swap $ Distribution by Txn Count on Poly [Log]',)
+#               labels={'USER_COUNT': 'User Count'})
+df9_fig6.update_layout(hovermode="x unified")
 
 ##########################___________________DF21_____________________######################
 
@@ -380,10 +381,8 @@ with col_1b:
     st.write("")
     st.write("")
     st.write("")
-    st.write("")
-    st.write("")
-    st.write("")
-    insight_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 16px;">Back in November 2018, Uniswap introduced its V1 contract on the Ethereum mainnet, setting the stage for a new kind of decentralized exchange. Fast forward five years, and Uniswap has been on quite a journey, constantly evolving with each new version. But it\'s not just Ethereum—it has spread its wings to different blockchains, attracting more users and becoming a hub for trading, swaps, and Total Value Locked (TVL).</p>'
+
+    insight_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 16px;">Uniswap users on Avalanche exhibit a distinctive trading behavior characterized by less frequent transactions in quick succession, notably reflected in the platform\'s high time difference (in seconds) between swaps per week. It\'s worth considering that this pattern may stem from the relatively recent integration of Uniswap on Avalanche. A parallel can be drawn to Arbitrum\'s early phase on Uniswap, where similar intervals were observed, suggesting that the trading dynamics could evolve over time as Uniswap becomes more established on Avalanche.</p>'
     st.markdown(insight_1, unsafe_allow_html=True)
 
 tab3, tab4 = st.tabs(["Swap Volume Distribution on Uniswap by Hour and Weekday [30D]", "User Distribution by Transaction Count [All Time]"])
@@ -416,25 +415,40 @@ with tab3:
 with tab4:
     col_2a, col_2b, col_2c = st.columns(3)
     with col_2a:
-        st.plotly_chart(df20_fig1, theme="streamlit", use_container_width=True)
-        st.link_button("View SQL", f"{url20}")
+        st.plotly_chart(df9_fig1, theme="streamlit", use_container_width=True)
+        st.link_button("View SQL", f"{url9}")
     with col_2b:
-        st.plotly_chart(df20_fig2, theme="streamlit", use_container_width=True)
-        st.link_button("View SQL", f"{url20}")
+        st.plotly_chart(df9_fig2, theme="streamlit", use_container_width=True)
+        st.link_button("View SQL", f"{url9}")
     with col_2c:
-        st.plotly_chart(df20_fig3, theme="streamlit", use_container_width=True)
-        st.link_button("View SQL", f"{url20}")
+        st.plotly_chart(df9_fig3, theme="streamlit", use_container_width=True)
+        st.link_button("View SQL", f"{url9}")
 
     col_3a, col_3b, col_3c = st.columns(3)
     with col_3a:
-        st.plotly_chart(df20_fig3, theme="streamlit", use_container_width=True)
-        st.link_button("View SQL", f"{url20}")
+        st.plotly_chart(df9_fig4, theme="streamlit", use_container_width=True)
+        st.link_button("View SQL", f"{url9}")
     with col_3b:
-        st.plotly_chart(df20_fig4, theme="streamlit", use_container_width=True)
-        st.link_button("View SQL", f"{url20}")
+        st.plotly_chart(df9_fig5, theme="streamlit", use_container_width=True)
+        st.link_button("View SQL", f"{url9}")
     with col_3c:
-        st.plotly_chart(df20_fig5, theme="streamlit", use_container_width=True)
-        st.link_button("View SQL", f"{url20}")
+        st.plotly_chart(df9_fig6, theme="streamlit", use_container_width=True)
+        st.link_button("View SQL", f"{url9}")
+
+colored_header(
+    label="",
+    description="",
+    color_name="gray-70",
+)
+
+insight_2 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">Thursdays, between 13:00 UTC and 17:00 UTC has been the most active time period by swap volume in the last 30 days across all 6 L2s.</p>'
+st.markdown(insight_2, unsafe_allow_html=True)
+
+colored_header(
+    label="",
+    description="",
+    color_name="gray-70",
+)
 
 col_7a, col_7b = st.columns(2)
 with col_7a:
@@ -460,6 +474,17 @@ with col_9b:
     st.plotly_chart(df21_fig6, theme="streamlit", use_container_width=True)
     st.link_button("View SQL", f"{url21}")
 
-# insight_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 16px;">Back in November 2018, Uniswap introduced its V1 contract on the Ethereum mainnet, setting the stage for a new kind of decentralized exchange. Fast forward five years, and Uniswap has been on quite a journey, constantly evolving with each new version. But it\'s not just Ethereum—it has spread its wings to different blockchains, attracting more users and becoming a hub for trading, swaps, and Total Value Locked (TVL).</p>'
+colored_header(
+    label="",
+    description="",
+    color_name="gray-70",
+)
 
-# st.markdown(insight_1, unsafe_allow_html=True)
+insight_3 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">Except for Avalanche, where Trader Joe holds dominance, and BSC, where Pancakeswap reigns supreme, Uniswap commands the lion\'s share of swap volume among decentralized exchanges (DEXs) across the remaining four chains. Notably, on chains like Base, where Uniswap was initially unavailable, its subsequent launch resulted in a substantial market shift, eroding the market share of existing alternatives like Balancer. This underscores Uniswap\'s status as a household name, with users demonstrating a readiness to transition from other platforms to leverage its services once it becomes accessible.</p>'
+st.markdown(insight_3, unsafe_allow_html=True)
+
+colored_header(
+    label="",
+    description="",
+    color_name="gray-70",
+)
