@@ -42,7 +42,7 @@ div[data-testid="metric-container"] > label[data-testid="stMetricLabel"] > div {
             , unsafe_allow_html=True)
 
 st.markdown(f'<h1 style="color:#434346;font-size:60px;text-align:center;">{"User Retention & Growth"}</h1>', unsafe_allow_html=True)
-st.info("Focusing on user dynamics, this page dissects user retention rates and growth patterns across Layer 2s. Understanding how users persist on different chains and exploring factors contributing to user growth provides valuable insights into the user experience and network effects.", icon="ℹ️")
+st.info("This page dissects user retention rates and growth patterns across Uniswap on Layer 2s. Understanding how users persist on different L2s.", icon="ℹ️")
 
 ############################# cache datasets ########################################
 
@@ -208,39 +208,50 @@ df22_fig3.update_layout(hovermode="x unified")
 #################################################### LAYOUT ##############################################
 
 st.plotly_chart(df26_fig1, theme="streamlit", use_container_width=True)
+st.link_button("View SQL", f"{url26}")
 
 col_1a, col_1b = st.columns([2, 1.2])
 with col_1a:
     st.plotly_chart(df22_fig3, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url22}")
 with col_1b:
     st.plotly_chart(df1_fig1, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url1}")
 
 st.info("Users with an average swap amount of less than 100,000 USD are classified as 'Retail Users', while those with 100,000 USD or more are 'Whales'.", icon="ℹ️")
 
 col_2a, col_2b = st.columns(2)
 with col_2a:
     st.plotly_chart(df6_fig1, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url6}")
 with col_2b:
     st.plotly_chart(df6_fig2, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url6}")
 
 col_3a, col_3b = st.columns(2)
 with col_3a:
     st.plotly_chart(df6_fig3, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url6}")
 with col_3b:
     st.plotly_chart(df6_fig4, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url6}")
 
 col_4a, col_4b = st.columns(2)
 with col_4a:
     st.plotly_chart(df6_fig5, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url6}")
 with col_4b:
     st.plotly_chart(df6_fig6, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url6}")
 
 col_5a, col_5b = st.columns(2)
 with col_5a:
     st.plotly_chart(df16_fig1, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url16}")
 with col_5b:
     st.plotly_chart(df17_fig1, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url17}")
 
-insight_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 16px;">Back in November 2018, Uniswap introduced its V1 contract on the Ethereum mainnet, setting the stage for a new kind of decentralized exchange. Fast forward five years, and Uniswap has been on quite a journey, constantly evolving with each new version. But it\'s not just Ethereum—it has spread its wings to different blockchains, attracting more users and becoming a hub for trading, swaps, and Total Value Locked (TVL).</p>'
+# insight_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 16px;">Back in November 2018, Uniswap introduced its V1 contract on the Ethereum mainnet, setting the stage for a new kind of decentralized exchange. Fast forward five years, and Uniswap has been on quite a journey, constantly evolving with each new version. But it\'s not just Ethereum—it has spread its wings to different blockchains, attracting more users and becoming a hub for trading, swaps, and Total Value Locked (TVL).</p>'
 
-st.markdown(insight_1, unsafe_allow_html=True)
+# st.markdown(insight_1, unsafe_allow_html=True)
