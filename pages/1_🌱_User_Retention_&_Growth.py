@@ -4,8 +4,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from millify import millify
+from streamlit_extras.colored_header import colored_header
 
-# st.cache_data.clear()
+st.cache_data.clear()
 
 st.set_page_config(
     page_title="Uniswap On L2s",
@@ -252,6 +253,30 @@ with col_5b:
     st.plotly_chart(df17_fig1, theme="streamlit", use_container_width=True)
     st.link_button("View SQL", f"{url17}")
 
-# insight_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 16px;">Back in November 2018, Uniswap introduced its V1 contract on the Ethereum mainnet, setting the stage for a new kind of decentralized exchange. Fast forward five years, and Uniswap has been on quite a journey, constantly evolving with each new version. But it\'s not just Ethereum—it has spread its wings to different blockchains, attracting more users and becoming a hub for trading, swaps, and Total Value Locked (TVL).</p>'
 
-# st.markdown(insight_1, unsafe_allow_html=True)
+colored_header(
+    label="",
+    description="",
+    color_name="gray-70",
+)
+
+insight_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">The influx of new users on Uniswap has witnessed an upward trajectory, particularly during Arbitrum\'s inaugural airdrop. Intriguingly, despite the airdrop being specific to Arbitrum, there was a concurrent rise in new users across other Layer 2 (L2) solutions during that period. This suggests that initiatives boosting activity on one chain can have a spillover effect on other chains as well.</p>'
+st.markdown(insight_1, unsafe_allow_html=True)
+
+insight_2 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">While Optimism may not be the largest player in the broader landscape, Uniswap users on this platform exhibit noteworthy resilience and engagement. They claimed the highest transactions per user on Uniswap from January to May 2022, a surge likely propelled by airdrop enthusiasts eagerly anticipating the much-anticipated first Optimism (OP) airdrop, officially announced in April of the same year.</p>'
+st.markdown(insight_2, unsafe_allow_html=True)
+
+insight_3 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">Despite not holding the top spot in the grand scheme, Avalanche stands out for having the lowest retention rate among L2s, with only 81% of Uniswap users engaging in swaps on a single day. In contrast, Arbitrum stands as the only L2 where more users (52%) swapped on multiple days, with the remaining (42%) swapping on a single-day only.</p>'
+st.markdown(insight_3, unsafe_allow_html=True)
+
+insight_4 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">Arbitrum emerges as the haven for whales, boasting an impressive 591, a number nearly five times greater than Polygon\'s 119. In the realm of retail users, Arbitrum and Polygon share parity, each hosting approximately 2.6 million. However, the average swap amount for retail users on Arbitrum is the highest at around $2,500, a significant leap compared to Polygon\'s $1,000, securing Arbitrum\'s position as the preferred platform for substantial retail swaps.</p>'
+st.markdown(insight_4, unsafe_allow_html=True)
+
+insight_5 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">A closer examination of the types of contracts Uniswap users engage with reveals that bridging takes the lead across all the L2s under scrutiny, excluding Base and BSC. The Hop protocol, a token bridging decentralized application (dApp), enjoys particular popularity, especially on Arbitrum and Polygon, underscoring the significance of interoperability solutions in the Uniswap ecosystem.</p>'
+st.markdown(insight_5, unsafe_allow_html=True)
+
+colored_header(
+    label="",
+    description="",
+    color_name="gray-70",
+)
