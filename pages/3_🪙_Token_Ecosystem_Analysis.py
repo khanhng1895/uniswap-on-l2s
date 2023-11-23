@@ -42,7 +42,7 @@ div[data-testid="metric-container"] > label[data-testid="stMetricLabel"] > div {
             , unsafe_allow_html=True)
 
 st.markdown(f'<h1 style="color:#434346;font-size:60px;text-align:center;">{"Token Ecosystem Analysis"}</h1>', unsafe_allow_html=True)
-st.info("Focusing on user dynamics, this page dissects user retention rates and growth patterns across Layer 2s. Understanding how users persist on different chains and exploring factors contributing to user growth provides valuable insights into the user experience and network effects.", icon="ℹ️")
+st.info("This page explores the Uniswap token ecosystem on L2s, where we unveil the dynamics of listed tokens, top pools, and the most swapped tokens.", icon="ℹ️")
 
 ############################# cache datasets ########################################
 
@@ -194,21 +194,30 @@ df25_fig1.update_layout(hovermode="x unified")
 #################################################### LAYOUT ##############################################
 
 st.plotly_chart(df25_fig1, theme="streamlit", use_container_width=True)
+st.link_button("View SQL", f"{url25}")
 
 col_1a, col_1b = st.columns(2)
 with col_1a:
-    st.plotly_chart(df11_fig1, theme="streamlit", use_container_width=True)
+    st.plotly_chart(df18_fig1, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url18}")
+
 with col_1b:
-    st.plotly_chart(df12_fig1, theme="streamlit", use_container_width=True)
+    st.plotly_chart(df11_fig1, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url11}")
 
 col_2a, col_2b = st.columns(2)
 with col_2a:
     st.plotly_chart(df13_fig1, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url13}")
 with col_2b:
-    st.plotly_chart(df14_fig1, theme="streamlit", use_container_width=True)
+    st.plotly_chart(df15_fig1, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url15}")
 
 col_3a, col_3b = st.columns(2)
 with col_3a:
-    st.plotly_chart(df15_fig1, theme="streamlit", use_container_width=True)
+    st.plotly_chart(df12_fig1, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url12}")
+
 with col_3b:
-    st.plotly_chart(df18_fig1, theme="streamlit", use_container_width=True)
+    st.plotly_chart(df14_fig1, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url14}")
