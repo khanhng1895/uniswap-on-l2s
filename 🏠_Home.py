@@ -6,7 +6,7 @@ from plotly.subplots import make_subplots
 from millify import millify
 from streamlit_extras.colored_header import colored_header
 
-# st.cache_data.clear()
+st.cache_data.clear()
 
 st.set_page_config(
     page_title="Uniswap On L2s",
@@ -42,11 +42,11 @@ div[data-testid="metric-container"] > label[data-testid="stMetricLabel"] > div {
 """
             , unsafe_allow_html=True)
 
-text_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 20px;">Back in November 2018, Uniswap introduced its V1 contract on the Ethereum mainnet, setting the stage for a new kind of decentralized exchange. Fast forward five years, and Uniswap has been on quite a journey, constantly evolving with each new version. But it\'s not just Ethereum—it has spread its wings to different blockchains, attracting more users and becoming a hub for trading, swaps, and Total Value Locked (TVL).</p>'
+text_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 20px;">Back in November 2018, Uniswap introduced its V1 contract on the Ethereum mainnet, setting the stage for a new kind of decentralized exchange. Fast forward five years, and Uniswap has been on quite a journey, constantly evolving with each new version. But it\'s not just Ethereum—it has spread its wings to different blockchains, attracting more users and becoming a hub for trading.</p>'
 
-text_2 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 20px;">In this dashboard, we\'ll take a closer look at how people are utilizing Uniswap across various L2 chains — Arbitrum, Optimism, Polygon, BSC (Binance Smart Chain), and Base. We\'ll unravel the details and common trends that define Uniswap\'s functionality within these scaling environments.</p>'
+text_2 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 20px;">In this dashboard, we\'ll take a closer look at how people are utilizing Uniswap across various L2 chains — Arbitrum, Avalanche, Base, BSC, Optimism, and Polygon. We\'ll unravel the details and common trends that define Uniswap\'s functionality within these scaling environments.</p>'
 
-text_3 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 20px;">The data used for this dashboard is <a href="https://flipsidecrypto.xyz/">Flipside Crypto’s</a> <code>defi.ez_dex_swaps</code> tables. Data refreshes every <b>24 hours</b>. You can click on <b>View SQL</b> under each chart to view the underlying SQL code.</p>'
+text_3 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 20px;">Only <code>Uniswap V3</code> for the 6 L2s above are considered for this analysis. The data used for this dashboard is <a href="https://flipsidecrypto.xyz/">Flipside Crypto’s</a>. You can click on the <b>View SQL</b> button under each chart to view the underlying SQL query.</p>'
 
 # st.info("Use the menu on the left to select a page (click on > if closed).", icon="👈")
 st.markdown(f'<h1 style="color:#434346;font-size:60px;text-align:center;">{"Uniswap On L2s"}</h1>', unsafe_allow_html=True)
@@ -76,6 +76,47 @@ url22 = "https://flipsidecrypto.xyz/edit/queries/95beab6d-99e4-4133-ae87-f3f000c
 def load_df22():
     df22 = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{url22.split('/')[-1]}/data/latest")
     return df22
+
+########################################################################################
+url27 = "https://flipsidecrypto.xyz/edit/queries/44323a13-da6a-4c55-b15e-c6821afd8ca1"
+@st.cache_data
+def load_df27():
+    df27 = pd.read_json(f"https://api.flipsidecrypto.com/api/v2/queries/{url27.split('/')[-1]}/data/latest")
+    return df27
+
+df27 = load_df27()
+
+###############################___________________DF24_____________________#############################
+
+df27_fig1 = px.line(df27,
+              x="WEEK",
+              y="ACTIVE_POOLS",
+              color="CHAIN",
+              title="Uniswap Weekly Active Pools")
+df27_fig1.update_layout(hovermode="x unified")
+
+df27_fig2 = px.line(df27,
+              x="WEEK",
+              y="TOTAL_VOLUME",
+              color="CHAIN",
+              title="Uniswap Weekly Swap Volume (USD)")
+df27_fig2.update_layout(hovermode="x unified")
+
+df27_fig3 = px.line(df27,
+              x="WEEK",
+              y="AVG_VOLUME",
+              color="CHAIN",
+              title="Uniswap Weekly Average Volume (USD)")
+df27_fig3.update_layout(hovermode="x unified")
+
+df27_fig4 = px.line(df27,
+              x="WEEK",
+              y="MEDIAN_VOLUME",
+              color="CHAIN",
+              title="Uniswap Weekly Median Volume (USD)")
+df27_fig4.update_layout(hovermode="x unified")
+
+########################################################################################
 
 ############################### load datasets ###########################################
 
@@ -133,7 +174,6 @@ df22_fig2 = px.line(df22,
               title="Uniswap Weekly Swap Count")
 df22_fig2.update_layout(hovermode="x unified")
 
-
 #################################################### LAYOUT #############################################
 
 colored_header(
@@ -150,13 +190,13 @@ colored_header(
 
 col_1a, col_1b, col_1c = st.columns(3)
 with col_1a:
-    st.metric("Swap Volume", f"${millify(df8['VOLUME'].sum(), precision=2)}")
+    st.metric("Total Swap Volume", f"${millify(df8['VOLUME'].sum(), precision=2)}")
     st.link_button("View SQL", f"{url8}")
 with col_1b:
-    st.metric("Average Swap Size", f"${millify(df8['AVG_SWAP_SIZE_USD'].sum(), precision=2)}")
+    st.metric("Average Swap Amount", f"${millify(df8['AVG_SWAP_SIZE_USD'].sum(), precision=2)}")
     st.link_button("View SQL", f"{url8}")
 with col_1c:
-    st.metric("Median Swap Size", f"${millify(df8['MEDIAN_SWAP_SIZE_USD'].sum(), precision=2)}")
+    st.metric("Median Swap Amount", f"${millify(df8['MEDIAN_SWAP_SIZE_USD'].sum(), precision=2)}")
     st.link_button("View SQL", f"{url8}")
 
 
@@ -175,6 +215,22 @@ with col_3a:
 with col_3b:
     st.plotly_chart(df22_fig2, theme="streamlit", use_container_width=True)
     st.link_button("View SQL", f"{url22}")
+
+col_4a, col_4b = st.columns(2)
+with col_4a:
+    st.plotly_chart(df27_fig1, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url27}")
+with col_4b:
+    st.plotly_chart(df27_fig2, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url27}")
+
+col_5a, col_5b = st.columns(2)
+with col_5a:
+    st.plotly_chart(df27_fig3, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url27}")
+with col_5b:
+    st.plotly_chart(df27_fig4, theme="streamlit", use_container_width=True)
+    st.link_button("View SQL", f"{url27}")
 
 # insight_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 16px;">Back in November 2018, Uniswap introduced its V1 contract on the Ethereum mainnet, setting the stage for a new kind of decentralized exchange. Fast forward five years, and Uniswap has been on quite a journey, constantly evolving with each new version. But it\'s not just Ethereum—it has spread its wings to different blockchains, attracting more users and becoming a hub for trading, swaps, and Total Value Locked (TVL).</p>'
 
