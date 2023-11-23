@@ -41,8 +41,4 @@ div[data-testid="metric-container"] > label[data-testid="stMetricLabel"] > div {
             , unsafe_allow_html=True)
 
 st.markdown(f'<h1 style="color:#434346;font-size:60px;text-align:center;">{"Conclusion"}</h1>', unsafe_allow_html=True)
-st.info("Focusing on user dynamics, this page dissects user retention rates and growth patterns across Layer 2s. Understanding how users persist on different chains and exploring factors contributing to user growth provides valuable insights into the user experience and network effects.", icon="ℹ️")
-
-# describe query
-# url_1 = ""
-# df_1 = pd.read_json(url_1)
+st.info("This section encapsulates the essential takeaways from our exploration, providing a holistic understanding of the state of Uniswap on L2s.", icon="ℹ️")
