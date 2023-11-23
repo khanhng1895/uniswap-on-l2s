@@ -6,7 +6,7 @@ from plotly.subplots import make_subplots
 from millify import millify
 from streamlit_extras.colored_header import colored_header
 
-# st.cache_data.clear()
+st.cache_data.clear()
 
 st.set_page_config(
     page_title="Uniswap On L2s",
@@ -260,7 +260,7 @@ colored_header(
     color_name="gray-70",
 )
 
-insight_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">The influx of new users on Uniswap has witnessed an upward trajectory, particularly during Arbitrum\'s inaugural airdrop. Intriguingly, despite the airdrop being specific to Arbitrum, there was a concurrent rise in new users across other Layer 2 (L2) solutions during that period. This suggests that initiatives boosting activity on one chain can have a spillover effect on other chains as well.</p>'
+insight_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">The influx of new users on Uniswap has witnessed an upward trajectory, particularly during Arbitrum\'s inaugural airdrop. Intriguingly, despite the airdrop being specific to Arbitrum, there was a concurrent rise in new Uniswap users across other L2s during that period. This suggests that initiatives boosting activity on one chain can have a spillover effect on other chains as well.</p>'
 st.markdown(insight_1, unsafe_allow_html=True)
 
 insight_2 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">While Optimism may not be the largest player in the broader landscape, Uniswap users on this platform exhibit noteworthy resilience and engagement. They claimed the highest transactions per user on Uniswap from January to May 2022, a surge likely propelled by airdrop enthusiasts eagerly anticipating the much-anticipated first Optimism (OP) airdrop, officially announced in April of the same year.</p>'
