@@ -6,7 +6,7 @@ from plotly.subplots import make_subplots
 from millify import millify
 from streamlit_extras.colored_header import colored_header
 
-st.cache_data.clear()
+# st.cache_data.clear()
 
 st.set_page_config(
     page_title="Uniswap On L2s",
@@ -269,7 +269,7 @@ st.markdown(insight_2, unsafe_allow_html=True)
 insight_3 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">Avalanche stands out for having the lowest retention rate among L2s, with only 18% of Uniswap users engaging in swaps on different days. In contrast, Arbitrum stands as the only L2 where more users swapped on multiple days - 52%, with the remaining 48% swapping on a single-day only.</p>'
 st.markdown(insight_3, unsafe_allow_html=True)
 
-insight_4 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">Arbitrum emerges as the haven for whales, boasting an impressive 591, a number nearly five times greater than Polygon\'s 119. In the realm of retail users, Arbitrum and Polygon share parity, each hosting approximately 2.6 million. However, the average swap amount for retail users on Arbitrum is the highest at around $2,500, a significant leap compared to Polygon\'s $1,000, securing Arbitrum\'s position as the preferred L2 for substantial retail swaps.</p>'
+insight_4 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">Arbitrum emerges as the haven for whales, boasting an impressive 591, nearly five times greater than Polygon\'s 119. In the realm of retail users, Arbitrum and Polygon share parity, each hosting approximately 2.6 million. However, the average swap amount for retail users on Arbitrum is the highest at around $2,500, a significant leap compared to Polygon\'s $1,000, securing Arbitrum\'s position as the preferred L2 for substantial retail swaps.</p>'
 st.markdown(insight_4, unsafe_allow_html=True)
 
 insight_5 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">A closer examination of the types of contracts Uniswap users engage with reveals that bridging takes the lead across all the L2s under scrutiny, excluding Base and BSC. Hop protocol, a token bridging dApp, enjoys particular popularity, especially on Arbitrum and Polygon, underscoring the significance of interoperability in the Uniswap ecosystem.</p>'
