@@ -6,7 +6,7 @@ from plotly.subplots import make_subplots
 from millify import millify
 from streamlit_extras.colored_header import colored_header
 
-# st.cache_data.clear()
+st.cache_data.clear()
 
 st.set_page_config(
     page_title="Uniswap On L2s",
@@ -112,7 +112,7 @@ insight_1 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">
 st.markdown(insight_1, unsafe_allow_html=True)
 
 
-insight_2 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">Among Layer 2s, Polygon stands out as the most economical, boasting the lowest average gas cost and the lowest average gas cost for swapping $1. This cost efficiency likely contributes to Polygon\'s dominance, evident in its significantly higher number of active pools compared to other Layer 2 platforms. On the flip side, Optimism emerges as the costliest with an average gas cost of $0.4, while Base takes the lead in the average gas cost of swapping $1, amounting to $0.0013.</p>'
+insight_2 = '<p style="font-family:sans-serif; color:#4d372c; font-size: 18px;">Among Layer 2s, Polygon stands out as the most economical, boasting the lowest average gas cost and the lowest average gas cost for swapping $1. This cost efficiency likely contributes to Polygon\'s dominance, evident in its significantly higher number of active pools compared to other Layer 2 chains. On the flip side, Optimism emerges as the costliest with an average gas cost of $0.4, while Base takes the lead in the average gas cost of swapping $1, amounting to $0.0013.</p>'
 st.markdown(insight_2, unsafe_allow_html=True)
 
 colored_header(
